@@ -8,18 +8,18 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b33d0eb9-c14c-467c-9fb0-491c06d096b4" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="899ba659-d645-48cf-9aa3-f8d273a8528e" basePath="/api/timezone" >
+		<http:request-connection host="worldtimeapi.org" />
+	</http:request-config>
 	<flow name="demoFlow" doc:id="9fc1c591-1b14-4f00-b008-6008ba00fc94" >
-		<http:listener doc:name="Listener" doc:id="f75ca0b8-bb6f-4101-bde8-8d83ed0a7c32" config-ref="HTTP_Listener_config" path="/demo"/>
-		<logger level="INFO" doc:name="Logger" doc:id="169195eb-21c7-42b6-a8ed-d0eaa5540d85" message="#[this the demo]"/>
-		<set-payload value='#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;	"message" : "success"&#10;}]' doc:name="Set Payload" doc:id="bcf1136a-fe50-40d6-b90a-fb40fe79eb9e" />
-		<ee:transform doc:name="Transform Message" doc:id="e4955ab7-7ca1-4d57-9f78-096985e29225" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
+		<http:listener doc:name="Listener" doc:id="f75ca0b8-bb6f-4101-bde8-8d83ed0a7c32" config-ref="HTTP_Listener_config" path="/worldTime/{area}/{city}"/>
+		<http:request method="GET" doc:name="Request" doc:id="5e91456f-9e96-4135-a565-6f82d3b56e01" config-ref="HTTP_Request_configuration" path="/{area}/{city}">
+			<http:uri-params ><![CDATA[#[output application/java
 ---
 {
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
+	area : attributes.uriParams.area,
+	city : attributes.uriParams.city
+}]]]></http:uri-params>
+		</http:request>
 	</flow>
 </mule>
