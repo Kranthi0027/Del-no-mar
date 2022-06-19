@@ -37,10 +37,10 @@
 						<password>${anypoint.password}</password>
 						<environment>${env}</environment>
 						<applicationName>${appname}</applicationName>
-						<bussinessGroup>${business}</bussinessGroup>
+						<bussiness>${business}</bussiness>
 						<workerType>${vCore}</workerType>
 						<workers>${workers}</workers>
-						<cobectStoreV2>true</cobectStoreV2>
+						<obectStoreV2>true</obectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
