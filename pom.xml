@@ -31,15 +31,15 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.4.0</muleVersion>
-						<username>KranthiVinay</username>
-						<password>Kranthi@8686153806</password>
-						<environment>Sandbox</environment>
-						<applicationName>firstDemoDeployment</applicationName>
+						<uri>${uri}</uri>
+						<muleVersion>${muleVersion}</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>
+						<environment>${environment}</environment>
+						<applicationName>${applicationName}</applicationName>
 						
-						<workerType>Micro</workerType>
-						<workers>1</workers>
+						<workerType>${workerType}</workerType>
+						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
