@@ -32,14 +32,14 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>${mule.version)</muleVersion>
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
-						<environment>${env}</environment>
-						<applicationName>${appname}</applicationName>
-						<bussiness>${business}</bussiness>
-						<workerType>${vCore}</workerType>
-						<workers>${workers}</workers>
+						<muleVersion>4.4.0</muleVersion>
+						<username>KranthiVinay</username>
+						<password>Kranthi@8686153806</password>
+						<environment>Sandbox</environment>
+						<applicationName>firstDemoDeployment</applicationName>
+						<bussiness>Test</bussiness>
+						<workerType>Micro</workerType>
+						<workers>1</workers>
 						<obectStoreV2>true</obectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
