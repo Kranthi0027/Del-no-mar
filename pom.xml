@@ -37,7 +37,7 @@
 						<password>Kranthi@8686153806</password>
 						<environment>Sandbox</environment>
 						<applicationName>firstDemoDeployment</applicationName>
-						<business>Test</business>
+						
 						<workerType>Micro</workerType>
 						<workers>1</workers>
 						<obectStoreV2>true</obectStoreV2>
