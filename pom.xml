@@ -32,12 +32,11 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>${uri}</uri>
-						<muleVersion>${muleVersion}</muleVersion>
+						<muleVersion>4.4.0</muleVersion>
 						<username>${username}</username>
 						<password>${password}</password>
 						<environment>${environment}</environment>
 						<applicationName>${applicationName}</applicationName>
-						
 						<workerType>${workerType}</workerType>
 						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
